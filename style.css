@@ -42,6 +42,55 @@ header {
     height: auto;
 }
 
+/* ===================== MENÚ HAMBURGUESA ===================== */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    width: 28px;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Overlay cuando el menú está abierto */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(6, 29, 56, 0.95);
+    z-index: 999;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
 nav ul {
     display: flex;
     list-style: none;
@@ -282,7 +331,8 @@ nav a:hover::after {
 }
 
 .form-tag {
-    color: #0a9dd6; /* Harmonizado con el cyan del sitio */
+    color: #0a9dd6;
+    /* Harmonizado con el cyan del sitio */
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -294,7 +344,8 @@ nav a:hover::after {
 .form-header h2 {
     color: #0a192f;
     font-size: 1.8rem;
-    font-weight: 400; /* Peso ligero se ve más elegante en títulos de formularios */
+    font-weight: 400;
+    /* Peso ligero se ve más elegante en títulos de formularios */
     line-height: 1.2;
     margin-bottom: 0.75rem;
 }
@@ -302,7 +353,8 @@ nav a:hover::after {
 .form-header p {
     color: #5a6a7a;
     font-size: 0.95rem;
-    line-height: 1.6; /* Mejor legibilidad */
+    line-height: 1.6;
+    /* Mejor legibilidad */
 }
 
 /* Grid y Grupos */
@@ -316,7 +368,8 @@ nav a:hover::after {
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem; /* Espacio entre el label y el input */
+    gap: 0.5rem;
+    /* Espacio entre el label y el input */
 }
 
 .form-group.full-width {
@@ -349,7 +402,8 @@ nav a:hover::after {
 .form-group textarea:focus {
     outline: none;
     border-color: #0a9dd6;
-    box-shadow: 0 0 0 3px rgba(10, 157, 214, 0.1); /* Anillo de foco cyan suave */
+    box-shadow: 0 0 0 3px rgba(10, 157, 214, 0.1);
+    /* Anillo de foco cyan suave */
 }
 
 .form-group input::placeholder,
@@ -375,7 +429,8 @@ nav a:hover::after {
     height: 18px;
     margin-top: 2px;
     cursor: pointer;
-    accent-color: #0a9dd6; /* Color del check */
+    accent-color: #0a9dd6;
+    /* Color del check */
 }
 
 .checkbox-group label {
@@ -2159,6 +2214,35 @@ select:focus {
     transform: translateX(5px);
 }
 
+.btn-conoce-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #fff;
+    transition: all 0.3s;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.btn-conoce-hero:hover {
+    color: #0a9dd6;
+    border-bottom-color: #0a9dd6;
+}
+
+.btn-conoce-hero .arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+.btn-conoce-hero:hover .arrow {
+    transform: translateX(5px);
+}
+
 /* Columna Derecha - Carrusel */
 .col-carrusel {
     position: relative;
@@ -3361,7 +3445,8 @@ select:focus {
 }
 
 .contacto-tipo {
-    color:  #087fbd;;
+    color: #087fbd;
+    ;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 1px;
@@ -3457,9 +3542,9 @@ select:focus {
 }
 
 .image-blog {
-   max-width: 100%;
-   height: auto;
-   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .box-title {
@@ -3543,21 +3628,79 @@ select:focus {
 
 
 
+/*================ Responsive Mobile CSS ================*/
+@media (max-width: 1440px) {
+    header {
+        padding: 0rem 5%;
+    }
 
-
-/* Responsive Mobile CSS*/
-@media (max-width: 1024px) {
     .hero-content {
-        grid-template-columns: 1fr;
+        min-height: 700px;
+    }
+
+    .hero h1 {
+        font-size: 4.5rem;
+    }
+
+    .hero h1 span {
+        font-size: 4.5rem;
+    }
+
+    .titulo-video {
+        min-width: auto;
+    }
+
+    .titulo-principios {
+        min-width: auto;
+    }
+
+    .contacto-container {
+        gap: 80px;
+    }
+}
+
+@media (max-width: 1024px) {
+    header {
+        padding: 0rem 3%;
+    }
+
+    nav ul {
         gap: 2rem;
     }
 
-    .form-card {
-        max-width: 600px;
-        margin: 0 auto;
+    /* Hero */
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        min-height: auto;
+        padding-top: 100px;
+        padding-bottom: 60px;
     }
 
-    .features-bottom {
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero h1 span {
+        font-size: 4rem;
+    }
+
+    .form-card {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .hero-values {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 40px;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    /* Features bottom */
+    .facts-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -3565,49 +3708,133 @@ select:focus {
         border-right: none;
     }
 
+    /* Proyecto */
+    .proyecto-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .col-derecha {
+        padding-top: 0;
+    }
+
+    .titulo-principal {
+        font-size: 2.8rem;
+    }
+
+    /* Video */
+    .video-header {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .descripcion-video {
+        padding-top: 0;
+    }
+
+    .titulo-video {
+        font-size: 3rem;
+        min-width: auto;
+    }
+
+    /* Amenities */
+    .amenities-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .descripcion-amenities {
+        padding-top: 0;
+    }
+
+    .amenities-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 250px 250px;
+    }
+
+    .amenity-card.piscina {
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;
+    }
+
+    /* Tipologías */
+    .tipologias-header {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .descripcion-tipologias {
+        padding-top: 0;
+    }
+
+    .titulo-tipologias {
+        font-size: 3rem;
+    }
+
+    .tab-content.active {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-imagen {
+        min-height: 350px;
+    }
+
+    /* Ubicación */
     .ubicacion-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
     .titulo-ubicacion {
+        font-size: 3rem;
+    }
+
+    /* Pasos */
+    .pasos-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .titulo-pasos {
         font-size: 2.8rem;
+        max-width: 100%;
     }
 
-    .section-ubicacion {
-        padding: 50px 20px;
+    /* FAQ */
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 
+    .col-titulo {
+        position: static;
+    }
+
+    .titulo-faq {
+        font-size: 2.5rem;
+    }
+
+    /* Cotizar */
     .cotizar-container {
         grid-template-columns: 1fr;
         gap: 50px;
     }
 
     .titulo-cotizar {
-        font-size: 2.8rem;
-    }
-
-    .precio {
         font-size: 3rem;
     }
 
-    .section-cotizar {
-        padding: 60px 20px;
+    /* Nosotros */
+    .nosotros-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 
-    .hero-text h1 {
-        font-size: 4rem;
+    .titulo-nosotros {
+        font-size: 3rem;
     }
 
-    .hero-values {
-        right: 40px;
-        bottom: 40px;
-    }
-
-    .value-item {
-        padding: 15px 20px;
-    }
-
+    /* Equipo */
     .equipo-header {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -3618,7 +3845,7 @@ select:focus {
     }
 
     .titulo-equipo {
-        font-size: 2.4rem;
+        font-size: 3rem;
     }
 
     .carrusel-equipo {
@@ -3637,134 +3864,21 @@ select:focus {
         font-size: 2.5rem;
     }
 
-    .section-equipo {
-        padding: 50px 20px;
+    /* Misión y Visión */
+    .mv-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
     }
 
-    .articulos-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .mv-grid::before {
+        display: none;
     }
 
-    .titulo-articulos {
+    .mv-titulo {
         font-size: 2.8rem;
     }
 
-    .section-articulos {
-        padding: 60px 30px;
-    }
-}
-
-@media (max-width: 968px) {
-    .proyecto-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .col-derecha {
-        padding-top: 0;
-    }
-
-    .titulo-principal {
-        font-size: 2.2rem;
-    }
-
-    .section-proyecto {
-        padding: 50px 20px;
-    }
-
-    .video-header {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .descripcion-video {
-        padding-top: 0;
-    }
-
-    .titulo-video {
-        font-size: 2.2rem;
-    }
-
-    .section-video {
-        padding: 50px 20px;
-    }
-
-    .tipologias-header {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .descripcion-tipologias {
-        padding-top: 0;
-    }
-
-    .titulo-tipologias {
-        font-size: 2.4rem;
-    }
-
-    .tab-content.active {
-        grid-template-columns: 1fr;
-    }
-
-    .tab-imagen {
-        min-height: 350px;
-    }
-
-    .tab-info {
-        padding: 40px 30px;
-    }
-
-    .tab-info-titulo {
-        font-size: 2rem;
-    }
-
-    .section-tipologias {
-        padding: 50px 20px;
-    }
-
-    .pasos-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .titulo-pasos {
-        font-size: 2.8rem;
-    }
-
-    .section-pasos {
-        padding: 50px 20px;
-    }
-
-    .faq-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .col-titulo {
-        position: static;
-    }
-
-    .titulo-faq {
-        font-size: 2.8rem;
-    }
-
-    .section-faq {
-        padding: 50px 20px;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-    }
-
-    .footer-brand {
-        grid-column: 1 / -1;
-    }
-
-    .footer {
-        padding: 50px 30px 25px;
-    }
-
+    /* Principios */
     .principios-header {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -3776,23 +3890,27 @@ select:focus {
 
     .titulo-principios {
         font-size: 2.8rem;
+        min-width: auto;
     }
 
-    .section-principios {
-        padding: 50px 20px;
+    .principios-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
+    .principio-item:nth-child(1) {
+        border-left: none;
+    }
+
+    .principio-item:nth-child(2) {
+        border-right: none;
+    }
+
+    /* CTA */
     .cta-titulo {
-        font-size: 2.8rem;
+        font-size: 3.5rem;
     }
 
-    .cta-shade {
-        background: linear-gradient(90deg,
-                rgba(10, 25, 47, 0.95) 0%,
-                rgba(10, 25, 47, 0.8) 50%,
-                rgba(10, 25, 47, 0.3) 100%);
-    }
-
+    /* Blog */
     .blog-header-grid {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -3800,15 +3918,11 @@ select:focus {
     }
 
     .titulo-blog {
-        font-size: 3.2rem;
+        font-size: 3.5rem;
     }
 
     .blog-header-right {
         padding-bottom: 0;
-    }
-
-    .section-blog-header {
-        padding: 60px 20px;
     }
 
     .blog-card {
@@ -3816,50 +3930,146 @@ select:focus {
     }
 
     .blog-card-imagen {
-        min-height: 350px;
-    }
-
-    .blog-card-contenido {
-        padding: 40px 30px;
+        min-height: 400px;
     }
 
     .blog-card-titulo {
-        font-size: 2.2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        padding: 1rem;
-    }
-
-    nav {
-        display: none;
-    }
-
-    .hero {
-        margin-top: 60px;
-        padding: 2rem 1rem;
-    }
-
-    .hero h1 {
         font-size: 2.5rem;
     }
 
+    /* Artículos */
+    .articulos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .titulo-articulos {
+        font-size: 2.5rem;
+    }
+
+    /* CTA Info */
+    .cta-info-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .titulo-cta {
+        font-size: 2.8rem;
+    }
+
+    /* Contacto */
+    .contacto-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .contacto-info h2 {
+        font-size: 2.8rem;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 968px) {
+    header {
+        padding: 0rem 3%;
+    }
+
+    .btn-cotizar {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 350px;
+        height: 100vh;
+        background-color: #061d38;
+        padding: 100px 40px 40px;
+        transition: right 0.4s ease;
+        z-index: 1000;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .nav-menu a {
+        font-size: 1.2rem;
+        color: #ffffff;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero h1 span {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
     .price {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .features-list {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 10px;
     }
 
+    .hero-values {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .value-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+    }
+
+    .value-item:last-child {
+        border-bottom: none;
+    }
+
+    /* Form */
     .form-row {
         grid-template-columns: 1fr;
     }
 
-    .features-bottom {
+    .form-card {
+        padding: 2rem;
+    }
+
+    /* Features bottom */
+    .facts-grid {
         grid-template-columns: 1fr;
     }
 
@@ -3872,38 +4082,62 @@ select:focus {
         border-bottom: none;
     }
 
-    .titulo-ubicacion {
-        font-size: 2.2rem;
+    .feature-box:first-child {
+        border-left: none;
     }
 
-    .ubicaciones-grid {
-        grid-template-columns: 1fr 1fr;
+    /* Secciones generales */
+    .section-proyecto,
+    .section-video,
+    .section-tipologias,
+    .section-pasos,
+    .section-faq,
+    .section-principios,
+    .section-articulos,
+    .section-nosotros,
+    .section-equipo,
+    .section-mision-vision {
+        padding: 60px 20px;
     }
 
-    .ubicacion-item {
-        border-right: 1px solid #e8e6e1;
+    .section-ubicacion,
+    .section-contacto {
+        padding: 60px 20px;
     }
 
-    .ubicacion-item:nth-child(3n) {
-        border-right: 1px solid #e8e6e1;
+    .section-amenities {
+        padding-block: 80px;
     }
 
-    .ubicacion-item:nth-child(2n) {
-        border-right: none;
+    /* Título generales */
+    .titulo-principal,
+    .titulo-video,
+    .titulo-tipologias,
+    .titulo-ubicacion,
+    .titulo-pasos,
+    .titulo-faq,
+    .titulo-cotizar,
+    .titulo-nosotros,
+    .titulo-equipo,
+    .titulo-principios,
+    .titulo-cta,
+    .titulo-blog,
+    .titulo-articulos {
+        font-size: 2.2rem !important;
     }
 
-    .ubicacion-item:nth-child(n+7) {
-        border-bottom: none;
+    /* Amenities */
+    .amenities-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 250px);
     }
 
-    .ubicacion-item:nth-last-child(-n+1) {
-        border-bottom: 1px solid #e8e6e1;
+    .amenity-card.piscina {
+        grid-row: auto;
+        grid-column: auto;
     }
 
-    .titulo-pasos {
-        font-size: 2.2rem;
-    }
-
+    /* Pasos */
     .col-pasos {
         grid-template-columns: 1fr;
     }
@@ -3917,20 +4151,191 @@ select:focus {
         border-bottom: none;
     }
 
-    .titulo-cotizar {
-        font-size: 2.2rem;
+    .paso-item:first-child {
+        border-left: none;
     }
 
-    .form-grid {
+    /* Principios */
+    .principios-grid {
         grid-template-columns: 1fr;
     }
 
-    .form-card {
-        padding: 30px 20px;
+    .principio-item {
+        border-right: none;
+        border-bottom: 1px solid #e0e6ed;
+        gap: 30px;
     }
 
-    .precio {
+    .principio-item:last-child {
+        border-bottom: none;
+    }
+
+    .principio-item:nth-child(1) {
+        border-left: none;
+    }
+
+    /* Ubicación */
+    .ubicaciones-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ubicacion-item:nth-child(3n) {
+        border-right: 1px solid #e8e6e1;
+    }
+
+    .ubicacion-item:nth-child(2n) {
+        border-right: none;
+    }
+
+    /* CTA */
+    .section-cta {
+        min-height: 500px;
+    }
+
+    .cta-titulo {
+        font-size: 2.2rem !important;
+    }
+
+    .cta-inner {
+        max-width: 100%;
+    }
+
+    /* Blog */
+    .blog-card-contenido {
+        padding: 40px 30px;
+    }
+
+    .blog-card-titulo {
+        font-size: 2rem !important;
+    }
+
+    /* Artículos */
+    .articulos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Equipo */
+    .carrusel-arrows {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    /* Misión y Visión */
+    .mv-titulo {
+        font-size: 2.2rem;
+    }
+
+    .mv-item {
+        gap: 30px;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer {
+        padding: 50px 20px 25px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .brand-logo {
+        width: 160px;
+    }
+
+    /* Hero */
+    .hero-content {
+        padding-top: 90px;
+    }
+
+    .hero h1 {
         font-size: 2.5rem;
+    }
+
+    .hero h1 span {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .price {
+        font-size: 2rem;
+    }
+
+    .btn-conoce-hero {
+        font-size: 1rem;
+    }
+
+    /* Form */
+    .form-card {
+        padding: 1.5rem;
+    }
+
+    .form-header h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Tipologías */
+    .tabs-nav {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-btn {
+        padding: 15px;
+        font-size: 0.85rem;
+    }
+
+    .tab-info-titulo {
+        font-size: 1.8rem;
+    }
+
+    .tab-imagen {
+        min-height: 280px;
+    }
+
+    /* Ubicación */
+    .ubicaciones-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ubicacion-item {
+        border-right: none;
+    }
+
+    .ubicacion-item:nth-child(3n) {
+        border-right: none;
+    }
+
+    .ubicacion-item:nth-child(2n) {
+        border-right: none;
+    }
+
+    .btn-maps {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* FAQ */
+    .faq-pregunta {
+        font-size: 1rem;
+    }
+
+    .faq-question {
+        padding: 20px 0;
+    }
+
+    /* Cotizar */
+    .precio {
+        font-size: 2rem;
     }
 
     .form-footer {
@@ -3939,94 +4344,80 @@ select:focus {
         align-items: center;
     }
 
-    .hero {
-        min-height: 600px;
+    /* Equipo */
+    .info-nombre {
+        font-size: 2rem;
     }
 
-    .hero-content {
-        padding: 0 30px;
+    .carrusel-info-panel {
+        padding: 30px 20px;
     }
 
-    .hero-text h1 {
-        font-size: 3rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-
-    .hero-values {
-        position: relative;
-        bottom: auto;
-        right: auto;
-        margin-top: 40px;
+    .contacto-item {
         flex-direction: column;
+        gap: 5px;
+    }
+
+    .contacto-label {
+        min-width: auto;
+    }
+
+    /* Blog */
+    .blog-card-contenido {
+        padding: 30px 25px;
+    }
+
+    .btn-asesoria {
         width: 100%;
-        max-width: 400px;
+        justify-content: center;
     }
 
-    .value-item {
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        width: 100%;
+    /* Artículos */
+    .articulo-titulo {
+        font-size: 1.3rem;
     }
 
-    .value-item:last-child {
-        border-bottom: none;
+    .articulo-contenido {
+        padding: 25px 22px 30px;
     }
 
-    .titulo-principios {
-        font-size: 2.2rem;
-    }
-
-    .principios-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .principio-item {
-        border-right: none;
-        border-bottom: 1px solid #e0e6ed;
-    }
-
-    .principio-item:last-child {
-        border-bottom: none;
-    }
-
+    /* CTA */
     .section-cta {
-        min-height: 500px;
+        min-height: 450px;
     }
 
     .cta-content {
-        padding: 60px 30px;
+        padding: 50px 20px;
     }
 
-    .cta-titulo {
+    .cta-btn {
+        padding: 16px 24px;
+        font-size: 0.85rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Contacto */
+    .contacto-info h2 {
         font-size: 2.2rem;
     }
 
-    .cta-inner {
-        max-width: 100%;
+    /* Modal */
+    .modal-overlay {
+        padding: 20px;
     }
 
-    .articulos-header {
+    .modal-titulo {
+        font-size: 1.3rem;
+    }
+
+    .modal-info {
         flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .categorias {
-        padding-bottom: 0;
-    }
-
-    .titulo-articulos {
-        font-size: 2.4rem;
-    }
-
-    .section-articulos {
-        padding: 50px 20px;
+        gap: 5px;
     }
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .titulo-tipologias {
         font-size: 2rem;
     }
@@ -4136,177 +4527,298 @@ select:focus {
     .articulo-contenido {
         padding: 25px 22px 30px;
     }
-}
+} */
 
 @media (max-width: 480px) {
-    .titulo-principal {
-        font-size: 1.8rem;
+    header {
+        padding: 0.8rem 4%;
     }
 
-    .beneficio-descripcion {
-        padding-left: 0;
+    .brand-logo {
+        width: 190px;
     }
 
-    .beneficio-header {
-        flex-direction: column;
-        gap: 5px;
+    /* Hero */
+    .hero-content {
+        padding-top: 115px;
+        padding-bottom: 40px;
     }
 
-    .titulo-video {
-        font-size: 1.8rem;
+    .hero h1 {
+        font-size: 3.3rem;
     }
 
-    .video-badge {
-        top: 15px;
-        left: 15px;
-        font-size: 0.65rem;
-        padding: 8px 12px;
+    .hero h1 span {
+        font-size: 3.6rem;
     }
 
-    .video-barra-titulo {
-        font-size: 1.2rem;
+    .preventa-tag {
+        font-size: 1rem;
     }
 
-    .video-barra-subtitulo {
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .price {
+        font-size: 2.5rem;
+        gap: 1rem;
+    }
+
+    .price-label {
+        font-size: 0.85rem;
+    }
+
+    .feature-item {
+        font-size: 1.1rem;
+    }
+
+    /* Form */
+    .form-card {
+        padding: 1.2rem;
+    }
+
+    .form-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .form-tag {
         font-size: 0.7rem;
     }
 
-    .titulo-ubicacion {
-        font-size: 1.8rem;
+    .btn-submit {
+        font-size: 0.8rem;
+        padding: 0.9rem;
     }
 
-    .ubicaciones-grid {
-        grid-template-columns: 1fr;
+    .form-footer {
+        font-size: 10px;
     }
 
-    .ubicacion-item {
-        border-right: none;
+    /* Títulos generales */
+    .titulo-principal,
+    .titulo-video,
+    .titulo-tipologias,
+    .titulo-ubicacion,
+    .titulo-pasos,
+    .titulo-faq,
+    .titulo-cotizar,
+    .titulo-nosotros,
+    .titulo-equipo,
+    .titulo-principios,
+    .titulo-cta,
+    .titulo-blog,
+    .titulo-articulos,
+    .titulo-cta-info {
+        font-size: 1.8rem !important;
+        letter-spacing: -0.5px !important;
     }
 
-    .ubicacion-item:nth-child(3n) {
-        border-right: none;
+    /* Secciones */
+    .section-proyecto,
+    .section-video,
+    .section-tipologias,
+    .section-pasos,
+    .section-faq,
+    .section-principios,
+    .section-articulos,
+    .section-nosotros,
+    .section-equipo,
+    .section-mision-vision,
+    .section-ubicacion,
+    .section-contacto {
+        padding: 50px 15px;
     }
 
-    .ubicacion-item:nth-child(2n) {
-        border-right: none;
+    .section-amenities {
+        padding-block: 60px;
     }
 
-    .btn-maps {
-        width: 100%;
-        justify-content: center;
+    .section-cotizar,
+    .section-cta-info {
+        padding: 50px 15px;
     }
 
-    .titulo-pasos {
-        font-size: 1.8rem;
+    /* Amenities */
+    .amenity-titulo {
+        font-size: 1.2rem;
     }
 
+    .amenity-descripcion {
+        font-size: 0.85rem;
+    }
+
+    .amenity-btn {
+        width: 32px;
+        height: 32px;
+        top: 15px;
+        right: 15px;
+    }
+
+    /* Tipologías */
+    .tab-info {
+        padding: 30px 20px;
+    }
+
+    .tab-info-titulo {
+        font-size: 1.5rem;
+    }
+
+    /* Ubicación */
+    .direccion-bloque {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .ubicacion-distancia {
+        padding-left: 0;
+    }
+
+    /* Pasos */
     .paso-item {
         padding: 25px 20px;
     }
 
-    .titulo-faq {
-        font-size: 1.8rem;
-    }
-
-    .section-faq {
-        padding: 40px 20px;
-    }
-
-    .titulo-cotizar {
-        font-size: 1.8rem;
-    }
-
-    .form-header h2 {
-        font-size: 1.6rem;
-    }
-
-    .precio {
-        font-size: 2rem;
-    }
-
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-tag {
-        font-size: 0.75rem;
-    }
-
-    .btn-conoce {
-        padding: 14px 24px;
-        font-size: 0.85rem;
-    }
-
-    .value-item {
-        padding: 15px;
-    }
-
-    .titulo-equipo {
-        font-size: 1.8rem;
-    }
-
-    .info-nombre {
-        font-size: 1.8rem;
-    }
-
-    .carrusel-arrow {
-        width: 36px;
-        height: 36px;
-    }
-
-    .titulo-principios {
-        font-size: 1.8rem;
-    }
-
+    /* Principios */
     .principio-item {
-        padding: 30px 25px;
+        padding: 30px 20px;
     }
 
     .principio-titulo {
         font-size: 1.3rem;
     }
 
-    .section-cta {
-        min-height: 450px;
+    /* CTA */
+    .cta-btn {
+        font-size: 0.8rem;
     }
 
-    .cta-content {
-        padding: 50px 20px;
+    /* Equipo */
+    .carrusel-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
     }
 
-    .cta-titulo {
+    .info-nombre {
         font-size: 1.8rem;
     }
 
-    .cta-btn {
-        padding: 16px 24px;
-        font-size: 0.85rem;
-        width: 100%;
-        justify-content: center;
+    .info-cargo {
+        font-size: 1rem;
     }
 
-    .titulo-blog {
-        font-size: 2rem;
+    .contacto-valor {
+        font-size: 0.95rem;
     }
 
-    .section-blog-header {
-        padding: 50px 20px;
+    /* Misión y Visión */
+    .mv-titulo {
+        font-size: 1.8rem;
     }
 
+    .mv-descripcion {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    /* Blog */
     .blog-card-imagen {
         min-height: 250px;
     }
 
-    .blog-card-titulo {
-        font-size: 1.6rem;
+    .blog-card-contenido {
+        padding: 25px 20px;
     }
 
-    .titulo-articulos {
+    .blog-card-titulo {
+        font-size: 1.6rem !important;
+    }
+
+    .btn-asesoria {
+        padding: 14px 20px;
+        font-size: 0.8rem;
+    }
+
+    /* Artículos */
+    .articulo-badge {
+        width: 30px;
+        height: 30px;
+        font-size: 0.65rem;
+        top: 15px;
+        right: 15px;
+    }
+
+    .articulo-titulo {
+        font-size: 1.15rem;
+    }
+
+    .articulo-descripcion {
+        font-size: 0.9rem;
+    }
+
+    /* Contacto */
+    .contacto-info h2 {
         font-size: 1.8rem;
     }
 
-    .section-articulos {
-        padding: 40px 15px;
+    .contacto-valor-paragraph {
+        font-size: 0.95rem;
     }
 
+    /* Footer */
+    .footer {
+        padding: 40px 15px 20px;
+    }
+
+    .footer-col-title {
+        font-size: 0.75rem;
+    }
+
+    .footer-col a,
+    .footer-col p {
+        font-size: 0.85rem;
+    }
+
+    /* Modal */
+    .modal-close {
+        top: 15px;
+        right: 15px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .modal-image-container {
+        aspect-ratio: 4/3;
+    }
+
+    /* Carrusel proyectos */
+    .carrusel-info {
+        left: 20px;
+        right: 20px;
+        padding: 12px 18px;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .carrusel-info-titulo {
+        font-size: 0.9rem;
+    }
+
+    .carrusel-info-subtitulo {
+        font-size: 0.8rem;
+    }
+
+    .carrusel-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .carrusel-container .carrusel-arrow.prev {
+        left: 10px;
+    }
+
+    .carrusel-container .carrusel-arrow.next {
+        right: 10px;
+    }
 }
