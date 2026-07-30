@@ -51,3 +51,18 @@ function openTab(evt, tabName) {
     document.getElementById(tabName).classList.add('active');
     evt.currentTarget.classList.add('active');
 }
+
+function toggleFaq(button) {
+            const faqItem = button.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Cerrar todos los items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Abrir el item clickeado si no estaba activo
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
