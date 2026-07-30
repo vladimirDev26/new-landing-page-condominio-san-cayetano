@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros -Condominio San Cayetano - Tu primer depa. Tu patrimonio.</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <a href="#inicio" class="logo" aria-label="Condominio San Cayetano Logo">
+            <img class="brand-logo" src="image/logo-san-cayetano.png" alt="Condominio San Cayetano Logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#quienes-somos">Inicio</a></li>
+                <li><a href="#quienes-somos">Nosotros</a></li>
+                <li><a href="#proyecto">Proyectos</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <a class="btn-cotizar" href="#form">
+            Cotizar ahora
+            <span class="arrow" aria-hidden="true">→</span>
+        </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img class="hero-background" src="image/editorial/about-hero.webp" alt="Hero Image" />
+        <div class="hero-shade"></div>
+        <div class="hero-content shell">
+            <div class="hero-text">
+                <h1>Construimos espacios.<br><span>Acompañamos historias.</span></h1>
+                <p class="hero-subtitle">Más que departamentos, desarrollamos hogares pensados para vivir con comodidad,
+                    seguridad y confianza.</p>
+                <a href="#form" class="btn-conocenos">CONÓCENOS
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+            <!-- Barra inferior con valores -->
+            <div class="hero-values">
+                <div class="value-item">
+                    <span class="value-number">01</span>
+                    <span class="value-text">Servicio humano</span>
+                </div>
+                <div class="value-item">
+                    <span class="value-number">02</span>
+                    <span class="value-text">Compra transparente</span>
+                </div>
+                <div class="value-item">
+                    <span class="value-number">03</span>
+                    <span class="value-text">Desarrollo responsable</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Nuestra manera de trabajar -->
+    <section class="section-nosotros">
+        <div class="shell nosotros-grid">
+            <!-- Columna Izquierda -->
+            <div class="col-texto">
+                <div class="etiqueta">Nuestra manera de trabajar</div>
+                <h2 class="titulo-nosotros">Un hogar es el comienzo de una nueva etapa</h2>
+
+                <p class="parrafo-destacado">
+                    En Condominio San Cayetano creemos que elegir un departamento es una decisión personal y patrimonial
+                    que merece información clara.
+                </p>
+
+                <p class="parrafo-secundario">
+                    Nos especializamos en crear hogares funcionales, modernos y bien ubicados. Acompañamos a cada
+                    cliente con un enfoque cercano, transparente y profesional, desde la primera consulta hasta la
+                    decisión de compra.
+                </p>
+
+                <a href="#proyecto" class="btn-conoce">
+                    Conoce el proyecto
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+
+            <!-- Columna Derecha - Carrusel -->
+            <div class="col-carrusel">
+                <div class="carrusel-container" id="carrusel-proyectos">
+                    <!-- Slides -->
+                    <div class="carrusel-slide-proj active" data-titulo="Hogares con propósito"
+                        data-subtitulo="Diseño funcional para la vida real">
+                        <img src="image/depa-2-dorm.webp" alt="Sala de estar moderna">
+                    </div>
+                    <div class="carrusel-slide-proj" data-titulo="Espacios bien aprovechados"
+                        data-subtitulo="Tipología de 1 dormitorio">
+                        <img src="image/depa-1-dorm.webp" alt="Departamento moderno">
+                    </div>
+                    <div class="carrusel-slide-proj" data-titulo="Comodidad para compartir"
+                        data-subtitulo="Tipología de 2 dormitorios">
+                        <img src="image/depa-2-dorm.webp" alt="Interior de calidad">
+                    </div>
+                    <div class="carrusel-slide-proj" data-titulo="Más espacio para crecer"
+                        data-subtitulo="Tipología de 3 dormitorios">
+                        <img src="image/depa-3-dorm.webp" alt="Vista del departamento">
+                    </div>
+                    <div class="carrusel-slide-proj" data-titulo="Arquitectura contemporánea"
+                        data-subtitulo="Exteriores del proyecto">
+                        <img src="image/hero-torre.webp" alt="Cocina moderna">
+                    </div>
+                    <div class="carrusel-slide-proj" data-titulo="Un proyecto para vivir mejor"
+                        data-subtitulo="Vista general del condominio">
+                        <img src="image/vista-aerea.webp" alt="Dormitorio moderno">
+                    </div>
+
+                    <!-- Badge contador -->
+                    <div class="carrusel-badge">
+                        <span class="slide-actual-proj">01</span> / <span class="slide-total-proj">06</span>
+                    </div>
+
+                    <!-- Flechas -->
+                    <button class="carrusel-arrow prev" data-carrusel="proyectos" aria-label="Anterior">←</button>
+                    <button class="carrusel-arrow next" data-carrusel="proyectos" aria-label="Siguiente">→</button>
+
+                    <!-- Dots -->
+                    <div class="carrusel-dots dots-proyectos"></div>
+
+                    <!-- Información inferior -->
+                    <div class="carrusel-info">
+                        <span class="carrusel-info-titulo info-titulo-proj">Hogares con propósito</span>
+                        <span class="carrusel-info-subtitulo info-subtitulo-proj">Diseño funcional para la vida
+                            real</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Conoce nuestro equipo comercial -->
+    <section class="section-equipo">
+        <div class="shell">
+            <!-- Header -->
+            <div class="equipo-header">
+                <div>
+                    <div class="etiqueta-people">Personas que te acompañan</div>
+                    <h2 class="titulo-equipo">Conoce a nuestro equipo comercial</h2>
+                </div>
+                <div>
+                    <p class="descripcion-equipo">
+                        Asesoría personalizada para entender tus necesidades, resolver dudas y ayudarte a tomar una
+                        decisión informada.
+                    </p>
+                    <p class="nota-referencia">Nombres y datos mostrados únicamente como referencia visual.</p>
+                </div>
+            </div>
+
+            <!-- Carrusel -->
+            <div class="carrusel-equipo" id="carrusel-equipo">
+                <!-- Imagen -->
+                <div class="carrusel-imagen">
+                    <div class="carrusel-slide-eq active" data-nombre="Diego Salazar" data-cargo="Asesor inmobiliario"
+                        data-subcargo="Orientación comercial"
+                        data-descripcion="Información clara, atención cercana y acompañamiento para ayudarte a elegir la opción que mejor se adapte a ti."
+                        data-telefono="+51 900 000 101" data-correo="diego.salazar@example.com">
+                        <img src="/image/team/asesor-01.webp" alt="Diego Salazar - Asesor inmobiliario">
+                    </div>
+
+                    <div class="carrusel-slide-eq" data-nombre="María Rodríguez" data-cargo="Asesora comercial"
+                        data-subcargo="Atención al cliente"
+                        data-descripcion="Experiencia en ventas inmobiliarias y compromiso con cada cliente para encontrar el hogar ideal."
+                        data-telefono="+51 900 000 102" data-correo="maria.rodriguez@example.com">
+                        <img src="/image/team/asesor-02.webp" alt="María Rodríguez - Asesora comercial">
+                    </div>
+
+                    <div class="carrusel-slide-eq" data-nombre="Carlos Mendoza" data-cargo="Asesor de ventas"
+                        data-subcargo="Especialista en proyectos"
+                        data-descripcion="Conocimiento profundo del mercado inmobiliario y dedicación para guiarte en cada paso de tu compra."
+                        data-telefono="+51 900 000 103" data-correo="carlos.mendoza@example.com">
+                        <img src="/image/team/asesora-03.webp" alt="Carlos Mendoza - Asesor de ventas">
+                    </div>
+
+                    <!-- Badge -->
+                    <div class="carrusel-badge">
+                        <span class="slide-actual-eq">01</span> / <span class="slide-total-eq">03</span>
+                    </div>
+
+                    <!-- Flechas -->
+                    <div class="carrusel-arrows">
+                        <button class="carrusel-arrow prev" data-carrusel="equipo" aria-label="Anterior">←</button>
+                        <button class="carrusel-arrow next" data-carrusel="equipo" aria-label="Siguiente">→</button>
+                    </div>
+                </div>
+
+                <!-- Panel de información -->
+                <div class="carrusel-info-panel">
+                    <div class="info-etiqueta">Tu asesor en cada etapa</div>
+                    <h3 class="info-nombre info-nombre-eq">Diego Salazar</h3>
+                    <div class="info-cargo info-cargo-eq">Asesor inmobiliario</div>
+                    <div class="info-subcargo info-subcargo-eq">Orientación comercial</div>
+                    <p class="info-descripcion info-descripcion-eq">
+                        Información clara, atención cercana y acompañamiento para ayudarte a elegir la opción que mejor
+                        se adapte a ti.
+                    </p>
+
+                    <div class="info-contacto">
+                        <div class="contacto-item">
+                            <span class="contacto-label">Teléfono</span>
+                            <span class="contacto-valor info-telefono-eq">+51 900 000 101</span>
+                        </div>
+                        <div class="contacto-item">
+                            <span class="contacto-label">Correo</span>
+                            <span class="contacto-valor info-correo-eq">diego.salazar@example.com</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Mision y Vision -->
+    <section class="section-mision-vision">
+        <div class="shell">
+            <div class="mv-grid">
+                <!-- Misión -->
+                <div class="mv-item">
+                    <div class="mv-label">01 / Misión</div>
+                    <h2 class="mv-titulo">
+                        Soluciones habitacionales que se adaptan a cada estilo de vida.
+                    </h2>
+                    <p class="mv-descripcion">
+                        Desarrollar departamentos modernos, seguros y bien ubicados, con un servicio excelente y
+                        procesos transparentes.
+                    </p>
+                </div>
+                <!-- Visión -->
+                <div class="mv-item">
+                    <div class="mv-label">02 / Visión</div>
+                    <h2 class="mv-titulo">
+                        Transformar espacios en hogares y mejorar la calidad de vida.
+                    </h2>
+                    <p class="mv-descripcion">
+                        Ser reconocidos por la innovación, la confianza y la satisfacción de quienes eligen nuestros
+                        proyectos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Guia de Decision -->
+    <section class="section-principios">
+        <div class="shell">
+            <!-- Header -->
+            <div class="principios-header">
+                <div>
+                    <div class="etiqueta-principios">Lo que guía cada decisión</div>
+                    <h2 class="titulo-principios">Principios que se traducen en confianza</h2>
+                </div>
+                <p class="descripcion-principios">
+                    Nuestro compromiso se refleja tanto en los espacios que desarrollamos como en la experiencia de quienes
+                    nos eligen.
+                </p>
+            </div>
+    
+            <!-- Grid de Principios -->
+            <div class="principios-grid">
+                <div class="principio-item">
+                    <div class="principio-numero">01</div>
+                    <div>
+                        <h3 class="principio-titulo">Calidad</h3>
+                        <p class="principio-descripcion">
+                            Espacios funcionales, acabados contemporáneos y decisiones pensadas para el día a día.
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="principio-item">
+                    <div class="principio-numero">02</div>
+                    <div>
+                        <h3 class="principio-titulo">Transparencia</h3>
+                        <p class="principio-descripcion">
+                            Información clara y acompañamiento profesional durante cada etapa de compra.
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="principio-item">
+                    <div class="principio-numero">03</div>
+                    <div>
+                        <h3 class="principio-titulo">Comunidad</h3>
+                        <p class="principio-descripcion">
+                            Proyectos que promueven seguridad, bienestar y una mejor forma de vivir juntos.
+                        </p>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature El siguiente Paso -->
+      <section class="section-cta">
+        <!-- Imagen de fondo -->
+        <img class="cta-background" src="image/jardin.webp" alt="Área exterior del proyecto San Cayetano">
+        <!-- Overlay gradiente -->
+        <div class="cta-shade"></div>
+        <!-- Contenido -->
+        <div class="cta-content">
+            <div class="cta-inner">
+                <div class="cta-etiqueta">El siguiente paso</div>
+                <h2 class="cta-titulo">Conoce el proyecto que convierte esta visión en un nuevo hogar.</h2>
+                <a href="#proyecto" class="cta-btn">
+                    Explorar San Cayetano
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Columna 1: Logo y descripción -->
+                <div class="footer-brand">
+                    <a href="#inicio" class="logo" aria-label="Condominio San Cayetano Logo">
+                        <img class="brand-logo" src="image/logo-san-cayetano.png" alt="Condominio San Cayetano Logo">
+                    </a>
+                    <p class="footer-description">
+                        Hogares funcionales, modernos y bien ubicados para empezar una nueva etapa.
+                    </p>
+                </div>
+
+                <!-- Columna 2: Explora -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Explora</h4>
+                    <ul>
+                        <li><a href="#quienes-somos">Nosotros</a></li>
+                        <li><a href="#proyecto">Proyectos</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Contacto -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Contacto</h4>
+                    <p>(+51) 982 835 241</p>
+                    <p><a href="mailto:ventas@gruposanjosé.pe"
+                            style="color: #cbd5e0; text-decoration: none;">ventas@gruposanjosé.pe</a></p>
+                    <p>Av. Encalada 1257, Santiago de Surco</p>
+                </div>
+
+
+                <!-- Columna 4: Documentos -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Documentos</h4>
+                    <ul class="documentos-list">
+                        <li><a href="#terminos">Términos y Condiciones</a></li>
+                        <li><a href="#privacidad">Políticas de Privacidad</a></li>
+                        <li><a href="#faq">Preguntas Frecuentes</a></li>
+                    </ul>
+
+                    <div class="libro-reclamaciones">
+                        <img src="image/libro-de-reclamos.png" alt="Libro de reclamaciones">
+                    </div>
+                </div>
+
+
+                <!-- Columna 5: Síguenos -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Síguenos</h4>
+                    <ul class="social-list">
+                        <li class="social-item">
+                            <div class="social-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                                </svg>
+                            </div>
+                            <a href="#">Instagram</a>
+                        </li>
+                        <li class="social-item">
+                            <div class="social-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                            </div>
+                            <a href="#">Facebook</a>
+                        </li>
+                        <li class="social-item">
+                            <div class="social-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+                                </svg>
+                            </div>
+                            <a href="#">TikTok</a>
+                        </li>
+                        <li class="social-item">
+                            <div class="social-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="currentColor"
+                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                                </svg>
+                            </div>
+                            <a href="#">Youtube</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer inferior -->
+            <div class="footer-bottom">
+                <p>© 2026 Grupo San Jose. Todos los derechos reservados.</p>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

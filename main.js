@@ -53,16 +53,159 @@ function openTab(evt, tabName) {
 }
 
 function toggleFaq(button) {
-            const faqItem = button.parentElement;
-            const isActive = faqItem.classList.contains('active');
+    const faqItem = button.parentElement;
+    const isActive = faqItem.classList.contains('active');
+
+    // Cerrar todos los items
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+    });
+
+    // Abrir el item clickeado si no estaba activo
+    if (!isActive) {
+        faqItem.classList.add('active');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    /* ==========================================
+       CARRUSEL 1: PROYECTOS (Nuestra manera de trabajar)
+       ========================================== */
+    const carruselProyectos = {
+        container: document.getElementById('carrusel-proyectos'),
+        slides: [],
+        currentIndex: 0,
+        
+        init() {
+            if (!this.container) return;
             
-            // Cerrar todos los items
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('active');
+            this.slides = this.container.querySelectorAll('.carrusel-slide-proj');
+            this.totalSlides = this.slides.length;
+            this.dotsContainer = this.container.querySelector('.dots-proyectos');
+            
+            // Crear dots
+            this.slides.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.classList.add('dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => this.goToSlide(index));
+                this.dotsContainer.appendChild(dot);
             });
             
-            // Abrir el item clickeado si no estaba activo
-            if (!isActive) {
-                faqItem.classList.add('active');
-            }
+            this.dots = this.dotsContainer.querySelectorAll('.dot');
+            this.update();
+            
+            // Botones
+            this.container.querySelector('.prev').addEventListener('click', () => this.changeSlide(-1));
+            this.container.querySelector('.next').addEventListener('click', () => this.changeSlide(1));
+        },
+        
+        changeSlide(direction) {
+            this.currentIndex += direction;
+            if (this.currentIndex >= this.totalSlides) this.currentIndex = 0;
+            if (this.currentIndex < 0) this.currentIndex = this.totalSlides - 1;
+            this.update();
+        },
+        
+        goToSlide(index) {
+            this.currentIndex = index;
+            this.update();
+        },
+        
+        update() {
+            // Actualizar slides
+            this.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === this.currentIndex);
+            });
+            
+            // Actualizar dots
+            this.dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === this.currentIndex);
+            });
+            
+            // Actualizar contador
+            const actualEl = this.container.querySelector('.slide-actual-proj');
+            if (actualEl) actualEl.textContent = String(this.currentIndex + 1).padStart(2, '0');
+            
+            // Actualizar información
+            const slideActivo = this.slides[this.currentIndex];
+            const tituloEl = this.container.querySelector('.info-titulo-proj');
+            const subtituloEl = this.container.querySelector('.info-subtitulo-proj');
+            
+            if (tituloEl) tituloEl.textContent = slideActivo.getAttribute('data-titulo') || '';
+            if (subtituloEl) subtituloEl.textContent = slideActivo.getAttribute('data-subtitulo') || '';
         }
+    };
+    
+    /* ==========================================
+       CARRUSEL 2: EQUIPO COMERCIAL
+       ========================================== */
+    const carruselEquipo = {
+        container: document.getElementById('carrusel-equipo'),
+        slides: [],
+        currentIndex: 0,
+        
+        init() {
+            if (!this.container) return;
+            
+            this.slides = this.container.querySelectorAll('.carrusel-slide-eq');
+            this.totalSlides = this.slides.length;
+            this.update();
+            
+            // Botones
+            const buttons = this.container.querySelectorAll('.carrusel-arrow');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const direction = btn.classList.contains('prev') ? -1 : 1;
+                    this.changeSlide(direction);
+                });
+            });
+        },
+        
+        changeSlide(direction) {
+            this.currentIndex += direction;
+            if (this.currentIndex >= this.totalSlides) this.currentIndex = 0;
+            if (this.currentIndex < 0) this.currentIndex = this.totalSlides - 1;
+            this.update();
+        },
+        
+        update() {
+            // Actualizar slides
+            this.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === this.currentIndex);
+            });
+            
+            // Actualizar contador
+            const actualEl = this.container.querySelector('.slide-actual-eq');
+            if (actualEl) actualEl.textContent = String(this.currentIndex + 1).padStart(2, '0');
+            
+            // Actualizar información
+            const slideActivo = this.slides[this.currentIndex];
+            
+            const elementos = {
+                nombre: '.info-nombre-eq',
+                cargo: '.info-cargo-eq',
+                subcargo: '.info-subcargo-eq',
+                descripcion: '.info-descripcion-eq',
+                telefono: '.info-telefono-eq',
+                correo: '.info-correo-eq'
+            };
+            
+            Object.keys(elementos).forEach(key => {
+                const el = this.container.querySelector(elementos[key]);
+                if (el) el.textContent = slideActivo.getAttribute(`data-${key}`) || '';
+            });
+        }
+    };
+    
+    // Inicializar ambos carruseles
+    carruselProyectos.init();
+    carruselEquipo.init();
+    
+    // Navegación con teclado (opcional)
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') carruselProyectos.changeSlide(-1);
+        if (e.key === 'ArrowRight') carruselProyectos.changeSlide(1);
+    });
+});
