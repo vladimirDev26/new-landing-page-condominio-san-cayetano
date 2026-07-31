@@ -15,7 +15,13 @@
         <a href="/index.html" class="logo" aria-label="Condominio San Cayetano Logo">
             <img class="brand-logo" src="image/logo-san-cayetano.png" alt="Condominio San Cayetano Logo">
         </a>
-        <nav>
+        <!-- Botón hamburguesa (nuevo) -->
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu">
             <ul>
                 <li><a href="/index.html">Inicio</a></li>
                 <li><a href="/nosotros.html">Nosotros</a></li>
@@ -23,6 +29,10 @@
                 <li><a href="/blog.html">Blog</a></li>
                 <li><a href="/contacto.html">Contacto</a></li>
             </ul>
+            <button type="submit" class="btn-submit activeMobile">
+                COTIZAR MI DEPA
+                <span class="arrow" aria-hidden="true">→</span>
+            </button>
         </nav>
         <a class="btn-cotizar" href="#form">
             Cotizar ahora

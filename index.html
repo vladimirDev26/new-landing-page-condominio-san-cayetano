@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Condominio San Cayetano - Tu primer depa. Tu patrimonio.</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="styles-2.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" />
 </head>
 
 <body>
@@ -14,7 +16,13 @@
         <a href="/index.html" class="logo" aria-label="Condominio San Cayetano Logo">
             <img class="brand-logo" src="image/logo-san-cayetano.png" alt="Condominio San Cayetano Logo">
         </a>
-        <nav>
+        <!-- Botón hamburguesa (nuevo) -->
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu">
             <ul>
                 <li><a href="/index.html">Inicio</a></li>
                 <li><a href="/nosotros.html">Nosotros</a></li>
@@ -22,6 +30,10 @@
                 <li><a href="/blog.html">Blog</a></li>
                 <li><a href="/contacto.html">Contacto</a></li>
             </ul>
+            <button type="submit" class="btn-submit activeMobile">
+                COTIZAR MI DEPA
+                <span class="arrow" aria-hidden="true">→</span>
+            </button>
         </nav>
         <a class="btn-cotizar" href="#form">
             Cotizar ahora
@@ -48,7 +60,7 @@
                     <div class="feature-item">Sin bancos</div>
                     <div class="feature-item">Entrega diciembre 2027</div>
                 </div>
-                <a class="btn-conoce">Conoce el proyecto
+                <a class="btn-conoce-hero">Conoce el proyecto
                     <span aria-hidden="true">↓</span>
                 </a>
             </div>
@@ -167,6 +179,10 @@
             <div class="col-izquierda">
                 <div class="etiqueta-superior">Una decisión que construye futuro</div>
                 <h2 class="titulo-principal">Deja de pagar alquiler y empieza a invertir en lo tuyo</h2>
+                <p class="descripcion active-mobile">
+                    San Cayetano te permite evaluar tu primer departamento con opciones claras, asesoría personalizada y
+                    una propuesta pensada para tu economía.
+                </p>
                 <div class="imagen-container">
                     <img src="/image/vista-aerea.webp" alt="Edificio Condominio San Cayetano - Vista aérea">
                     <div class="badge-imagen">Proyecto en preventa · Imágenes referenciales</div>
@@ -174,7 +190,7 @@
             </div>
             <!-- Columna Derecha -->
             <div class="col-derecha">
-                <p class="descripcion">
+                <p class="descripcion desable-mobile">
                     San Cayetano te permite evaluar tu primer departamento con opciones claras, asesoría personalizada y
                     una propuesta pensada para tu economía.
                 </p>
@@ -208,10 +224,12 @@
                         </p>
                     </li>
                 </ul>
-                <button class="btn-simulacion">
-                    Solicitar una simulación
-                    <span class="arrow">→</span>
-                </button>
+                <div class="content-simulacion">
+                    <button class="btn-simulacion">
+                        Solicitar una simulación
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
             </div>
 
         </div>
@@ -230,12 +248,19 @@
             </p>
         </div>
 
-        <!-- Video Container -->
-        <video controls width="100%" playsinline preload="metadata" poster="image/poster-recorrido.jpg"
-            aria-label="Video de recorrido por el proyecto San Cayetano">
-            <source src="media/video-recorrido-san-cayetano.mp4" type="video/mp4">
-            Tu navegador no soporta la etiqueta de video.
-        </video>
+        <div class="video-framer">
+            <!-- Video Container -->
+            <video controls width="100%" playsinline preload="metadata" poster="image/poster-recorrido.jpg"
+                aria-label="Video de recorrido por el proyecto San Cayetano">
+                <source src="media/video-recorrido-san-cayetano.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+            <div class="video-meta">
+                <span>Recorrido del proyecto</span>
+                <strong>01:05 min</strong>
+            </div>
+        </div>
+
     </section>
 
     <!-- Features Espacios que amplían-->
@@ -450,10 +475,12 @@
                     </div>
                 </div>
 
-                <button class="btn-simulacion">
-                    Solicitar una simulación
-                    <span class="arrow">↗</span>
-                </button>
+                <div class="content-simulacion">
+                    <button class="btn-simulacion">
+                        Solicitar una simulación
+                        <span class="arrow">↗</span>
+                    </button>
+                </div>
 
             </div>
 
@@ -603,11 +630,12 @@
                         <span class="faq-icono">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Los departamentos tienen precios desde US$30,000, sujetos a tipología, disponibilidad y condiciones comerciales
-                        vigentes.</p>
+                        <p>Los departamentos tienen precios desde US$30,000, sujetos a tipología, disponibilidad y
+                            condiciones comerciales
+                            vigentes.</p>
                     </div>
                 </div>
-    
+
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFaq(this)">
                         <span class="faq-pregunta">¿Cuántos dormitorios hay disponibles?</span>
@@ -617,28 +645,30 @@
                         <p>El proyecto cuenta con departamentos de 1, 2 y 3 dormitorios, desde 30 m².</p>
                     </div>
                 </div>
-    
+
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFaq(this)">
                         <span class="faq-pregunta">¿Cómo funciona el financiamiento directo?</span>
                         <span class="faq-icono">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Un asesor evalúa contigo el presupuesto y te presenta alternativas de pago directo, sin depender únicamente de una
-                        entidad bancaria.</p>
+                        <p>Un asesor evalúa contigo el presupuesto y te presenta alternativas de pago directo, sin
+                            depender únicamente de una
+                            entidad bancaria.</p>
                     </div>
                 </div>
-    
+
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFaq(this)">
                         <span class="faq-pregunta">¿Cuándo se entrega el proyecto?</span>
                         <span class="faq-icono">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>La entrega está proyectada para diciembre de 2027. Consulta con un asesor las condiciones y el cronograma vigente.</p>
+                        <p>La entrega está proyectada para diciembre de 2027. Consulta con un asesor las condiciones y
+                            el cronograma vigente.</p>
                     </div>
                 </div>
-    
+
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFaq(this)">
                         <span class="faq-pregunta">¿Dónde está ubicado?</span>
@@ -658,7 +688,7 @@
         <div class="cotizar-container">
             <!-- Columna Izquierda -->
             <div class="col-izquierda">
-                <div class="etiqueta">Da el primer paso hoy</div>
+                <div class="precio-etiqueta">Da el primer paso hoy</div>
                 <h2 class="titulo-cotizar">Conoce cuánto necesitas para tener tu depa propio</h2>
                 <p class="descripcion-cotizar">
                     Recibe una cotización personalizada y descubre qué alternativa puede ajustarse mejor a ti.
@@ -668,7 +698,7 @@
                     <div class="precio">US$30,000</div>
                 </div>
             </div>
-    
+
             <div class="form-card">
                 <div class="form-header">
                     <div class="form-tag">ASESORÍA GRATUITA</div>
@@ -683,8 +713,8 @@
                         </div>
                         <div class="form-group">
                             <label>WhatsApp</label>
-                            <input type="tel" name="phone" placeholder="Ej. 987 654 321" autocomplete="tel" required minlength="9"
-                                maxlength="9" pattern="[0-9]{9}">
+                            <input type="tel" name="phone" placeholder="Ej. 987 654 321" autocomplete="tel" required
+                                minlength="9" maxlength="9" pattern="[0-9]{9}">
                         </div>
                     </div>
                     <div class="form-row">
@@ -692,7 +722,7 @@
                             <label>Correo electrónico</label>
                             <input type="email" placeholder="tucorreo@gmail.com" autocomplete="email" required>
                         </div>
-            
+
                         <div class="form-group">
                             <label>¿Qué depa buscas?</label>
                             <select>
@@ -713,7 +743,7 @@
                                 <option>Más de US$30,000</option>
                             </select>
                         </div>
-            
+
                         <div class="form-group">
                             <label>¿Cuándo te gustaría realizar la compra?</label>
                             <select>
@@ -754,7 +784,7 @@
                         Hogares funcionales, modernos y bien ubicados para empezar una nueva etapa.
                     </p>
                 </div>
-    
+
                 <!-- Columna 2: Explora -->
                 <div class="footer-col">
                     <h4 class="footer-col-title">Explora</h4>
@@ -765,7 +795,7 @@
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
-    
+
                 <!-- Columna 3: Contacto -->
                 <div class="footer-col">
                     <h4 class="footer-col-title">Contacto</h4>
@@ -784,8 +814,9 @@
                         <li><a href="#privacidad">Políticas de Privacidad</a></li>
                         <li><a href="#faq">Preguntas Frecuentes</a></li>
                     </ul>
-                
-                    <a href="https://condominiosancayetano.com.pe/libro-de-reclamaciones/" target="_blank" class="libro-reclamaciones">
+
+                    <a href="https://condominiosancayetano.com.pe/libro-de-reclamaciones/" target="_blank"
+                        class="libro-reclamaciones">
                         <img src="image/libro-de-reclamos.png" alt="Libro de reclamaciones">
                     </a>
                 </div>
@@ -834,14 +865,18 @@
                     </ul>
                 </div>
             </div>
-    
+
             <!-- Footer inferior -->
             <div class="footer-bottom">
                 <p>© 2026 Grupo San Jose. Todos los derechos reservados.</p>
             </div>
-    
         </div>
     </footer>
+
+    <a class="mobile-cta">
+        Cotiza tu depa desde US$30,000
+        <span>→</span>
+    </a>
 
 
 
