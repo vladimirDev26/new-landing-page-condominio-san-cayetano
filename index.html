@@ -30,6 +30,10 @@
                 <li><a href="/blog.html">Blog</a></li>
                 <li><a href="/contacto.html">Contacto</a></li>
             </ul>
+            <button type="submit" class="btn-submit activeMobile">
+                COTIZAR MI DEPA
+                <span class="arrow" aria-hidden="true">→</span>
+            </button>
         </nav>
         <a class="btn-cotizar" href="#form">
             Cotizar ahora
@@ -175,6 +179,10 @@
             <div class="col-izquierda">
                 <div class="etiqueta-superior">Una decisión que construye futuro</div>
                 <h2 class="titulo-principal">Deja de pagar alquiler y empieza a invertir en lo tuyo</h2>
+                <p class="descripcion active-mobile">
+                    San Cayetano te permite evaluar tu primer departamento con opciones claras, asesoría personalizada y
+                    una propuesta pensada para tu economía.
+                </p>
                 <div class="imagen-container">
                     <img src="/image/vista-aerea.webp" alt="Edificio Condominio San Cayetano - Vista aérea">
                     <div class="badge-imagen">Proyecto en preventa · Imágenes referenciales</div>
@@ -182,7 +190,7 @@
             </div>
             <!-- Columna Derecha -->
             <div class="col-derecha">
-                <p class="descripcion">
+                <p class="descripcion desable-mobile">
                     San Cayetano te permite evaluar tu primer departamento con opciones claras, asesoría personalizada y
                     una propuesta pensada para tu economía.
                 </p>
@@ -216,10 +224,12 @@
                         </p>
                     </li>
                 </ul>
-                <button class="btn-simulacion">
-                    Solicitar una simulación
-                    <span class="arrow">→</span>
-                </button>
+                <div class="content-simulacion">
+                    <button class="btn-simulacion">
+                        Solicitar una simulación
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
             </div>
 
         </div>
@@ -238,12 +248,19 @@
             </p>
         </div>
 
-        <!-- Video Container -->
-        <video controls width="100%" playsinline preload="metadata" poster="image/poster-recorrido.jpg"
-            aria-label="Video de recorrido por el proyecto San Cayetano">
-            <source src="media/video-recorrido-san-cayetano.mp4" type="video/mp4">
-            Tu navegador no soporta la etiqueta de video.
-        </video>
+        <div class="video-framer">
+            <!-- Video Container -->
+            <video controls width="100%" playsinline preload="metadata" poster="image/poster-recorrido.jpg"
+                aria-label="Video de recorrido por el proyecto San Cayetano">
+                <source src="media/video-recorrido-san-cayetano.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+            <div class="video-meta">
+                <span>Recorrido del proyecto</span>
+                <strong>01:05 min</strong>
+            </div>
+        </div>
+
     </section>
 
     <!-- Features Espacios que amplían-->
@@ -458,10 +475,12 @@
                     </div>
                 </div>
 
-                <button class="btn-simulacion">
-                    Solicitar una simulación
-                    <span class="arrow">↗</span>
-                </button>
+                <div class="content-simulacion">
+                    <button class="btn-simulacion">
+                        Solicitar una simulación
+                        <span class="arrow">↗</span>
+                    </button>
+                </div>
 
             </div>
 
@@ -669,7 +688,7 @@
         <div class="cotizar-container">
             <!-- Columna Izquierda -->
             <div class="col-izquierda">
-                <div class="etiqueta">Da el primer paso hoy</div>
+                <div class="precio-etiqueta">Da el primer paso hoy</div>
                 <h2 class="titulo-cotizar">Conoce cuánto necesitas para tener tu depa propio</h2>
                 <p class="descripcion-cotizar">
                     Recibe una cotización personalizada y descubre qué alternativa puede ajustarse mejor a ti.
@@ -851,9 +870,13 @@
             <div class="footer-bottom">
                 <p>© 2026 Grupo San Jose. Todos los derechos reservados.</p>
             </div>
-
         </div>
     </footer>
+
+    <a class="mobile-cta">
+        Cotiza tu depa desde US$30,000
+        <span>→</span>
+    </a>
 
 
 
